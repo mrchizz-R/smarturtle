@@ -1146,7 +1146,7 @@ body:not(.rtl) .elementor-5 .elementor-element.elementor-element-fb8ea83 .elemen
     --align-items: stretch;
     --gap: 0px 0px;
     --background-transition: 0.3s;
-    --margin-block-start: 144px;
+    --margin-block-start: 0px;
     --margin-block-end: 0px;
     --margin-inline-start: 0px;
     --margin-inline-end: 0px;
@@ -3095,7 +3095,7 @@ body:not(.rtl) .elementor-5 .elementor-element.elementor-element-fb8ea83 .elemen
     }
 
     .elementor-5 .elementor-element.elementor-element-74fbaeb {
-        --margin-block-start: 96px;
+        --margin-block-start: 0px;
         --margin-block-end: 0px;
         --margin-inline-start: 0px;
         --margin-inline-end: 0px;
