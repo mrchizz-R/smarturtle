@@ -3340,8 +3340,69 @@
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope"
     class="home page-template-default page page-id-5 wp-custom-logo ast-desktop ast-page-builder-template ast-no-sidebar astra-4.8.1 ast-single-post ast-inherit-site-logo-transparent ast-theme-transparent-header ast-hfb-header elementor-default elementor-kit-4 elementor-page elementor-page-5">
 
-    <a class="skip-link screen-reader-text" href="#content" title="Skip to content">
-        Skip to content</a>
+    <!-- START Floating WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/6285183362464?text=Hi Smarturtle, saya tertarik untuk mendaftar di Smarturtle, cara daftarnya seperti apa ya?" target="_blank" aria-label="Chat with us on WhatsApp">
+            <div class="whatsapp-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" />
+                <span class="whatsapp-text">Register Now</span>
+            </div>
+        </a>
+    </div>
+
+    <style>
+        /* Floating WhatsApp Button with Text */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button a {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.whatsapp-button .whatsapp-text {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.whatsapp-button a:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+    </style>
+
+    <script>
+        document.addEventListener('scroll', function () {
+            const whatsappButton = document.querySelector('.whatsapp-button');
+            if (window.scrollY > 200) {
+                whatsappButton.style.display = 'block';
+            } else {
+                whatsappButton.style.display = 'none';
+            }
+        });
+    </script>
+
+
+    <!-- END Floating WhatsApp Button -->
+
 
     <div class="hfeed site" id="page">
         <header
@@ -3755,22 +3816,104 @@
                                                     <div class="e-con-inner">
                                                         <div class="elementor-element elementor-element-2fe0704 e-con-full e-flex e-con e-child"
                                                             data-id="2fe0704" data-element_type="container">
-                                                            <div class="elementor-element elementor-element-c8b0f32 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="c8b0f32" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">
-                                                                                Homework Support</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Membantu anak dengan pekerjaan rumah mereka untuk memperkuat pemahaman yang telah mereka pelajari di sekolah.
-                                                                            </p>
-                                                                        </div>
+                                                            
+                                                            <!-- experiment -->
+                                                            <div class="image-text-container" style="margin-bottom: 10px;">
+                                                                <div class="image-container">
+                                                                    <div class="image-background">
+                                                                        <img src="   https://cdn-icons-png.flaticon.com/512/5027/5027360.png " alt="Image" class="clipped-image">
                                                                     </div>
                                                                 </div>
+                                                                <div class="text-container">
+                                                                    <h4 class="heading-text"><br>Homework Support</h4>
+                                                                </div>
                                                             </div>
-                                                            <div class="elementor-element elementor-element-e81c561 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+                                                            <div class="image-text-container" style="margin-bottom: 10px;">
+                                                                <div class="image-container">
+                                                                    <div class="image-background">
+                                                                        <img src="   https://cdn-icons-png.flaticon.com/512/2995/2995440.png " alt="Image" class="clipped-image">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="text-container">
+                                                                    <h4 class="heading-text"><br>Final Test Preparation</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="elementor-element elementor-element-336603b e-con-full e-flex e-con e-child"
+                                                            data-id="336603b" data-element_type="container">
+                                                            <!-- experiment -->
+                                                            <div class="image-text-container" style="margin-bottom: 10px;">
+                                                                <div class="image-container">
+                                                                    <div class="image-background">
+                                                                        <img src="   https://cdn-icons-png.flaticon.com/512/3967/3967185.png " alt="Image" class="clipped-image">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="text-container">
+                                                                    <h4 class="heading-text"><br>Practice and Review</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="image-text-container" style="margin-bottom: 10px;">
+                                                                <div class="image-container">
+                                                                    <div class="image-background">
+                                                                        <img src="   https://cdn-icons-png.flaticon.com/512/3696/3696638.png " alt="Image" class="clipped-image">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="text-container">
+                                                                    <h4 class="heading-text"><br>Skill Development</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                            <style>
+                                                                /* Container to hold image and text */
+                                                                .image-text-container {
+                                                                    display: flex;
+                                                                    align-items: center; /* Align items vertically in the center */
+                                                                    gap: 15px; /* Space between the image and text */
+                                                                }
+
+                                                                /* Container for the image */
+                                                                .image-container {
+                                                                    flex-shrink: 0; /* Prevent the image container from shrinking */
+                                                                }
+
+                                                                /* Circular container for background and image */
+                                                                .image-background {
+                                                                    width: 70px; /* Set the desired size of the circle */
+                                                                    height: 70px;
+                                                                    background-color: #f5f5dc; /* Light cream background color */
+                                                                    display: flex;
+                                                                    justify-content: center;
+                                                                    align-items: center;
+                                                                    border: 1px solid black; /* Black border around the circle */
+                                                                    border-radius: 50%; /* Make the container round */
+                                                                    overflow: hidden; /* Ensure the image stays within the circle */
+                                                                }
+
+                                                                /* Styling for the image */
+                                                                .clipped-image {
+                                                                    width: 80%; /* Make the image fill the container */
+                                                                    height: 80%;
+                                                                    object-fit: cover; /* Ensure the image covers the area without distortion */
+                                                                }
+                                                                
+                                                                /* Container for the text */
+                                                                .text-container {
+                                                                    display: flex;
+                                                                    align-items: center; /* Align text vertically in the center */
+                                                                }
+
+                                                                /* Styling for the heading */
+                                                                .heading-text {
+                                                                    margin: 0; /* Remove any default margin */
+                                                                    font-size: 18px; /* Set the font size for the heading */
+                                                                }
+                                                            </style>
+                                                            
+                                                            <!-- exp -->
+                                                            <!-- <div class="elementor-element elementor-element-e81c561 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
                                                                 data-id="e81c561" data-element_type="widget"
                                                                 data-widget_type="divider.default">
                                                                 <div class="elementor-widget-container">
@@ -3779,130 +3922,9 @@
                                                                         </span>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-4880d6d elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="4880d6d" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">Final Test Preparation</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Mengidentifikasi area yang dapat dikembangkan dan membantu anak untuk membangun kepercayaan diri mereka untuk dapat mengerjakan tugas selanjutnya.
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-627aeb8 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                                                                data-id="627aeb8" data-element_type="widget"
-                                                                data-widget_type="divider.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-divider">
-                                                                        <span class="elementor-divider-separator">
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="elementor-element elementor-element-336603b e-con-full e-flex e-con e-child"
-                                                            data-id="336603b" data-element_type="container">
-                                                            <div class="elementor-element elementor-element-7cfff34 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="7cfff34" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">
-                                                                                Practice and Review</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Mendorong latihan secara reguler untuk membantu anak merasa lebih siap dan tetap termotivasi.
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-58e6222 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                                                                data-id="58e6222" data-element_type="widget"
-                                                                data-widget_type="divider.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-divider">
-                                                                        <span class="elementor-divider-separator">
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-c16261d elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="c16261d" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">Skill Development</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Berfokus pada area spesifik dimana anak membutuhkan latihan yang lebih untuk mengembangkan pemahaman dan daya ingat mereka.
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-58e6222 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                                                                data-id="58e6222" data-element_type="widget"
-                                                                data-widget_type="divider.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-divider">
-                                                                        <span class="elementor-divider-separator">
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- <div class="elementor-element elementor-element-bd22893 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="bd22893" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">
-                                                                                Superfoods</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Senectus fringilla vitae at lacus
-                                                                                sollicitudin mi vel consectetur congue
-                                                                                facilisi amet, maecenas egestas
-                                                                                imperdiet maecenas lorem cras aliquet
-                                                                                arcu, pharetra quis quam ipsum</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-0e64c3d elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                                                                data-id="0e64c3d" data-element_type="widget"
-                                                                data-widget_type="divider.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-divider">
-                                                                        <span class="elementor-divider-separator">
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-bffb8a1 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-                                                                data-id="bffb8a1" data-element_type="widget"
-                                                                data-widget_type="image-box.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-image-box-wrapper">
-                                                                        <div class="elementor-image-box-content">
-                                                                            <h4 class="elementor-image-box-title">
-                                                                                Outdoor Play</h4>
-                                                                            <p class="elementor-image-box-description">
-                                                                                Vel urna cursus nunc sem bibendum
-                                                                                adipiscing nibh metus viverra ultricies
-                                                                                pellentesque faucibus non ullamcorper
-                                                                                aliquet sed imperdiet faucibus dictumst
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </div> -->
-                                                        </div>
+                                                            
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -4207,7 +4229,7 @@
                                                 <div class="slider-container" style="overflow: hidden; width: 100%; position: relative;">
                                                     <div class="slider" style="display: flex; transition: transform 1s ease-in-out;">
                                                         <!-- Slide 1 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4229,7 +4251,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 2 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4247,7 +4269,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 3 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4265,7 +4287,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 4 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4283,7 +4305,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 5 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4301,7 +4323,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 6 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4319,7 +4341,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 7 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4337,7 +4359,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 8 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4355,7 +4377,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 9 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4373,7 +4395,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 10 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
@@ -4391,7 +4413,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Slide 11 -->
-                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px;">
+                                                        <div class="slide" style="flex: 0 0 33.33%; margin-right: 20px; width: 50%;">
                                                             <div class="elementor-element elementor-element-077424f elementor-position-top elementor-widget elementor-widget-image-box"
                                                                 data-id="077424f" data-element_type="widget"
                                                                 data-widget_type="image-box.default">
