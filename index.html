@@ -4457,6 +4457,7 @@
                                 // Add click event to each slide
                                 slides.forEach(slide => {
                                     const img = slide.querySelector('img');
+                                    img.style.height = '50%'
                                     img.addEventListener('click', () => {
                                         openImagePopup(img.src);
                                     });
@@ -4506,7 +4507,7 @@
                                     position: relative;
                                     /* width: auto;
                                     height: auto;  */
-                                    width: 50%;
+                                    width: 70%;
                                     height: 80%;
                                     display: flex;
                                     justify-content: center;
