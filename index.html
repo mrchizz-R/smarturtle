@@ -4421,6 +4421,11 @@
                             </div>
                             
                             <script>
+                                const slides = document.querySelectorAll('.slide');
+                            
+                                // Dynamically set slider width
+                                // slider.style.width = `100px`;
+                            
                                 // Open large image in popup
                                 function openImagePopup(imageSrc) {
                                     const popup = document.createElement('div');
@@ -4461,7 +4466,7 @@
                                 /* Continuous sliding styling */
                                 .slider {
                                     display: flex;
-                                    animation: continuous-slide 30s linear infinite; /* Adjust duration as needed */
+                                    animation: continuous-slide 15s linear infinite; /* Adjust duration as needed */
                                     will-change: transform;
                                 }
 
@@ -4469,10 +4474,15 @@
                                     10% {
                                         transform: translateX(-300%);
                                     }
-                                    70% {
+                                    80% {
                                         transform: translateX(0%);
                                     }
                                 }
+
+                                /* @keyframes continuous-slide {
+                                    10%    {transform: translate(-300%)}
+                                    75.01% {transform: translate( 100%)}
+                                } */
 
                             
                                 /* Popup styling */
