@@ -4421,15 +4421,6 @@
                             </div>
                             
                             <script>
-                                const slider = document.querySelector('.slider');
-                                const slides = document.querySelectorAll('.slide');
-                                const slideWidth = slides[0].offsetWidth + 20; // Adjust if margins/padding are added
-                                const totalSlides = slides.length;
-                                const totalSliderWidth = slideWidth * totalSlides;
-                            
-                                // Dynamically set slider width
-                                // slider.style.width = `100px`;
-                            
                                 // Open large image in popup
                                 function openImagePopup(imageSrc) {
                                     const popup = document.createElement('div');
@@ -4470,7 +4461,7 @@
                                 /* Continuous sliding styling */
                                 .slider {
                                     display: flex;
-                                    animation: continuous-slide 15s linear infinite; /* Adjust duration as needed */
+                                    animation: continuous-slide 30s linear infinite; /* Adjust duration as needed */
                                     will-change: transform;
                                 }
 
@@ -4478,15 +4469,10 @@
                                     10% {
                                         transform: translateX(-300%);
                                     }
-                                    80% {
+                                    70% {
                                         transform: translateX(0%);
                                     }
                                 }
-
-                                /* @keyframes continuous-slide {
-                                    10%    {transform: translate(-300%)}
-                                    75.01% {transform: translate( 100%)}
-                                } */
 
                             
                                 /* Popup styling */
