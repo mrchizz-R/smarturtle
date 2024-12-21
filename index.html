@@ -4421,70 +4421,14 @@
                             </div>
                             
                             <script>
-                                let currentSlide = 0;
-                                const slides = document.querySelectorAll('.slide');
-                                const totalSlides = slides.length;
-                                const slidesPerPage = 0; // 3 images per slide
                                 const slider = document.querySelector('.slider');
-                                const slideWidth = slides[0].offsetWidth + 20; // Slide width plus margin
-                                const totalPages = Math.ceil(totalSlides / slidesPerPage);
+                                const slides = document.querySelectorAll('.slide');
+                                const slideWidth = slides[0].offsetWidth + 20; // Adjust if margins/padding are added
+                                const totalSlides = slides.length;
+                                const totalSliderWidth = slideWidth * totalSlides;
                             
-                                let isSwiping = false;
-                                let startX = 0;
-                                let endX = 0;
-                            
-                                // Update slider position for swipe interactions
-                                function updateSliderPosition() {
-                                    slider.style.transition = "transform 0.5s ease-in-out";
-                                    slider.style.transform = `translateX(-${currentSlide * slideWidth * slidesPerPage}px)`;
-                                }
-                            
-                                // Continuous sliding with @keyframes
-                                function pauseAnimation() {
-                                    slider.style.animationPlayState = 'paused';
-                                }
-                            
-                                function resumeAnimation() {
-                                    slider.style.animationPlayState = 'running';
-                                }
-                            
-                                // Swipe control
-                                function startSwipe(event) {
-                                    pauseAnimation();
-                                    isSwiping = true;
-                                    startX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX;
-                                }
-                            
-                                function moveSwipe(event) {
-                                    if (isSwiping) {
-                                        endX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
-                                    }
-                                }
-                            
-                                function endSwipe() {
-                                    if (isSwiping) {
-                                        if (startX - endX > 50) {
-                                            // Swiped left
-                                            currentSlide = (currentSlide + 1) % totalPages;
-                                        } else if (endX - startX > 50) {
-                                            // Swiped right
-                                            currentSlide = (currentSlide - 1 + totalPages) % totalPages;
-                                        }
-                                        updateSliderPosition();
-                                        isSwiping = false;
-                                        setTimeout(resumeAnimation, 500); // Resume animation after swipe
-                                    }
-                                }
-                            
-                                // Attach swipe event listeners
-                                slider.addEventListener('mousedown', startSwipe);
-                                slider.addEventListener('mousemove', moveSwipe);
-                                slider.addEventListener('mouseup', endSwipe);
-                                slider.addEventListener('mouseleave', () => (isSwiping = false));
-                            
-                                slider.addEventListener('touchstart', startSwipe);
-                                slider.addEventListener('touchmove', moveSwipe);
-                                slider.addEventListener('touchend', endSwipe);
+                                // Dynamically set slider width
+                                // slider.style.width = `100px`;
                             
                                 // Open large image in popup
                                 function openImagePopup(imageSrc) {
@@ -4513,28 +4457,37 @@
                                 // Add click event to each slide
                                 slides.forEach(slide => {
                                     const img = slide.querySelector('img');
+                                    img.style.height = '50%'
                                     img.addEventListener('click', () => {
                                         openImagePopup(img.src);
                                     });
                                 });
                             </script>
                             
+                            
+                            
                             <style>
                                 /* Continuous sliding styling */
                                 .slider {
                                     display: flex;
-                                    animation: continuous-slide 10s linear infinite;
+                                    animation: continuous-slide 15s linear infinite; /* Adjust duration as needed */
                                     will-change: transform;
                                 }
-                            
+
                                 @keyframes continuous-slide {
-                                    0% {
-                                        transform: translateX(0);
+                                    10% {
+                                        transform: translateX(-300%);
                                     }
-                                    100% {
-                                        transform: translateX(-100%);
+                                    80% {
+                                        transform: translateX(0%);
                                     }
                                 }
+
+                                /* @keyframes continuous-slide {
+                                    10%    {transform: translate(-300%)}
+                                    75.01% {transform: translate( 100%)}
+                                } */
+
                             
                                 /* Popup styling */
                                 .popup {
@@ -4554,11 +4507,12 @@
                                     position: relative;
                                     /* width: auto;
                                     height: auto;  */
-                                    width: 80%;
+                                    width: 70%;
                                     height: 80%;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
+                                    background-color: black;
                                 }
                             
                                 .popup img {
