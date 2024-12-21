@@ -4424,50 +4424,69 @@
                                 let currentSlide = 0;
                                 const slides = document.querySelectorAll('.slide');
                                 const totalSlides = slides.length;
-                                const slidesPerPage = 3; // 3 images per slide
+                                const slidesPerPage = 0; // 3 images per slide
                                 const slider = document.querySelector('.slider');
-                                let slideWidth = slides[0].offsetWidth + 20; // Slide width plus margin
+                                const slideWidth = slides[0].offsetWidth + 20; // Slide width plus margin
+                                const totalPages = Math.ceil(totalSlides / slidesPerPage);
                             
-                                // Set continuous sliding interval
-                                function startContinuousSliding() {
-                                    setInterval(() => {
-                                        currentSlide = (currentSlide + 1) % Math.ceil(totalSlides / slidesPerPage);
-                                        slider.style.transform = translateX(-${currentSlide * slideWidth * slidesPerPage}px);
-                                    }, 5000); // Slide every 5 seconds for slower transition
-                                }
-                            
-                                // Allow user swipe control
+                                let isSwiping = false;
                                 let startX = 0;
                                 let endX = 0;
-                                let isSwiping = false;
                             
-                                slider.addEventListener('mousedown', (e) => {
+                                // Update slider position for swipe interactions
+                                function updateSliderPosition() {
+                                    slider.style.transition = "transform 0.5s ease-in-out";
+                                    slider.style.transform = `translateX(-${currentSlide * slideWidth * slidesPerPage}px)`;
+                                }
+                            
+                                // Continuous sliding with @keyframes
+                                function pauseAnimation() {
+                                    slider.style.animationPlayState = 'paused';
+                                }
+                            
+                                function resumeAnimation() {
+                                    slider.style.animationPlayState = 'running';
+                                }
+                            
+                                // Swipe control
+                                function startSwipe(event) {
+                                    pauseAnimation();
                                     isSwiping = true;
-                                    startX = e.clientX;
-                                });
+                                    startX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX;
+                                }
                             
-                                slider.addEventListener('mousemove', (e) => {
+                                function moveSwipe(event) {
                                     if (isSwiping) {
-                                        endX = e.clientX;
+                                        endX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
                                     }
-                                });
+                                }
                             
-                                slider.addEventListener('mouseup', () => {
+                                function endSwipe() {
                                     if (isSwiping) {
-                                        if (startX - endX > 50) { // Swiped left
-                                            currentSlide = (currentSlide + 1) % Math.ceil(totalSlides / slidesPerPage);
-                                        } else if (endX - startX > 50) { // Swiped right
-                                            currentSlide = (currentSlide - 1 + Math.ceil(totalSlides / slidesPerPage)) % Math.ceil(totalSlides / slidesPerPage);
+                                        if (startX - endX > 50) {
+                                            // Swiped left
+                                            currentSlide = (currentSlide + 1) % totalPages;
+                                        } else if (endX - startX > 50) {
+                                            // Swiped right
+                                            currentSlide = (currentSlide - 1 + totalPages) % totalPages;
                                         }
-                                        slider.style.transform = translateX(-${currentSlide * slideWidth * slidesPerPage}px);
+                                        updateSliderPosition();
                                         isSwiping = false;
+                                        setTimeout(resumeAnimation, 500); // Resume animation after swipe
                                     }
-                                });
+                                }
                             
-                                // Initialize continuous sliding
-                                startContinuousSliding();
-
-                                // Open large image in popup when clicked
+                                // Attach swipe event listeners
+                                slider.addEventListener('mousedown', startSwipe);
+                                slider.addEventListener('mousemove', moveSwipe);
+                                slider.addEventListener('mouseup', endSwipe);
+                                slider.addEventListener('mouseleave', () => (isSwiping = false));
+                            
+                                slider.addEventListener('touchstart', startSwipe);
+                                slider.addEventListener('touchmove', moveSwipe);
+                                slider.addEventListener('touchend', endSwipe);
+                            
+                                // Open large image in popup
                                 function openImagePopup(imageSrc) {
                                     const popup = document.createElement('div');
                                     popup.classList.add('popup');
@@ -4478,40 +4497,37 @@
                                         </div>
                                     `;
                                     document.body.appendChild(popup);
-
-                                    // Close the popup when the close button is clicked
+                            
                                     const closeButton = popup.querySelector('.close-popup');
                                     closeButton.addEventListener('click', () => {
                                         document.body.removeChild(popup);
                                     });
-
-                                    // Close the popup when clicking outside the image
+                            
                                     popup.addEventListener('click', (e) => {
                                         if (e.target === popup) {
                                             document.body.removeChild(popup);
                                         }
                                     });
                                 }
-
-                                // Add click event to each slide to open the large image
+                            
+                                // Add click event to each slide
                                 slides.forEach(slide => {
                                     const img = slide.querySelector('img');
-                                    console.log(img);
                                     img.addEventListener('click', () => {
                                         openImagePopup(img.src);
                                     });
                                 });
-
                             </script>
                             
                             <style>
-                                /* Continuous slide styling */
+                                /* Continuous sliding styling */
                                 .slider {
                                     display: flex;
-                                    animation: slide 10s infinite linear; /* Slower continuous animation */
+                                    animation: continuous-slide 10s linear infinite;
+                                    will-change: transform;
                                 }
                             
-                                @keyframes slide {
+                                @keyframes continuous-slide {
                                     0% {
                                         transform: translateX(0);
                                     }
@@ -4519,6 +4535,7 @@
                                         transform: translateX(-100%);
                                     }
                                 }
+                            
                                 /* Popup styling */
                                 .popup {
                                     position: fixed;
@@ -4532,30 +4549,39 @@
                                     align-items: center;
                                     z-index: 1000;
                                 }
-
+                            
                                 .popup-content {
                                     position: relative;
-                                    max-width: 90%;
-                                    max-height: 90%;
-                                    text-align: center;
+                                    /* width: auto;
+                                    height: auto;  */
+                                    width: 80%;
+                                    height: 80%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                 }
-
+                            
                                 .popup img {
-                                    width: 100%;
-                                    height: auto;
+                                    /* width: auto;
+                                    height: auto; */
+                                    width: 80%;
+                                    height: 80%;
+                                    object-fit: contain; /* Ensure the image is not cropped or zoomed */
+                                    display: block;
                                 }
-
+                            
                                 .close-popup {
                                     position: absolute;
                                     top: 10px;
                                     right: 10px;
-                                    background-color: white;
+                                    background-color: gray;
                                     border: none;
                                     font-size: 18px;
                                     padding: 5px 10px;
                                     cursor: pointer;
                                 }
                             </style>
+                            
 
 
                             <!-- end mod -->
